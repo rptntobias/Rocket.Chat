@@ -55,6 +55,36 @@ const minorColors= {
 	'status-offline': '@transparent-darker'
 };
 
+// Dark theme
+const majorDarkColors= {
+	'darktheme-content-background-color': '#1E1E1E',
+	'darktheme-primary-background-color': '#224D79',
+	'darktheme-primary-font-color': '#CCCCCC',
+	'darktheme-primary-action-color': '#13679A', // was action-buttons-color
+	'darktheme-secondary-background-color': '#323232',
+	'darktheme-secondary-font-color': '#606060',
+	'darktheme-secondary-action-color': '#222222',
+	'darktheme-component-color': '#1F1F1F',
+	'darktheme-success-color': '#0CAC0C',
+	'darktheme-pending-color': '#FCB316',
+	'darktheme-error-color': '#BC2031',
+	'darktheme-selection-color': '#066C92',
+	'darktheme-attention-color': '#913CA0'
+};
+
+// Minor colours implement major colours by default, but can be overruled
+const minorDarkColors= {
+	'darktheme-tertiary-background-color': '@darktheme-component-color',
+	'darktheme-tertiary-font-color': '@transparent-lightest',
+	'darktheme-link-font-color': '@darktheme-primary-action-color',
+	'darktheme-info-font-color': '@darktheme-secondary-font-color',
+	'darktheme-custom-scrollbar-color': '@transparent-darker',
+	'darktheme-status-online': '@darktheme-success-color',
+	'darktheme-status-away': '@darktheme-pending-color',
+	'darktheme-status-busy': '@darktheme-error-color',
+	'darktheme-status-offline': '@transparent-darker'
+};
+
 // Bulk-add settings for color scheme
 Object.keys(majorColors).forEach((key) => {
 	const value = majorColors[key];
@@ -64,6 +94,16 @@ Object.keys(majorColors).forEach((key) => {
 Object.keys(minorColors).forEach((key) => {
 	const value = minorColors[key];
 	RocketChat.theme.addPublicColor(key, value, 'Old Colors (minor)', 'expression');
+});
+
+Object.keys(majorDarkColors).forEach((key) => {
+	const value = majorDarkColors[key];
+	RocketChat.theme.addPublicColor(key, value, 'Old Colors (dark theme)');
+});
+
+Object.keys(minorDarkColors).forEach((key) => {
+	const value = minorDarkColors[key];
+	RocketChat.theme.addPublicColor(key, value, 'Old Colors (dark theme, minor)', 'expression');
 });
 
 RocketChat.theme.addPublicFont('body-font-family', '-apple-system, BlinkMacSystemFont, \'Segoe UI\', Roboto, Oxygen, Ubuntu, Cantarell, \'Helvetica Neue\', \'Apple Color Emoji\', \'Segoe UI Emoji\', \'Segoe UI Symbol\', \'Meiryo UI\', Arial, sans-serif');

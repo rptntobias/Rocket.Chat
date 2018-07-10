@@ -18,6 +18,7 @@ Meteor.methods({
 			highlights: Match.Optional([String]),
 			desktopNotificationDuration: Match.Optional(Number),
 			messageViewMode: Match.Optional(Number),
+			userTheme: Match.Optional(Number),
 			hideUsernames: Match.Optional(Boolean),
 			hideRoles: Match.Optional(Boolean),
 			hideAvatars: Match.Optional(Boolean),

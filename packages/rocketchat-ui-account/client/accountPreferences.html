@@ -240,6 +240,23 @@
 						</div>
 					</div>
 					<div class="section">
+						<h1>{{_ "Theme"}}</h1>
+						<div class="section-content border-component-color">
+							<div class="input-line double-col" id="userTheme">
+								<label>{{_ "Theme"}}</label>
+								<div>
+									<div class="rc-select">
+										<select class="input-monitor rc-select__element" name="userTheme">
+											<option value="0" selected="{{selected 'userTheme' 0}}">{{_ "Light"}}</option>
+											<option value="1" selected="{{selected 'userTheme' 1}}">{{_ "Dark"}}</option>
+										</select>
+										{{> icon block="rc-select__arrow" icon="arrow-down"}}
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="section">
 						<h1>{{_ "Sidebar"}}</h1>
 						<div class="section-content border-component-color">
 							<div class="input-line double-col" id="roomCounterSidebar">
